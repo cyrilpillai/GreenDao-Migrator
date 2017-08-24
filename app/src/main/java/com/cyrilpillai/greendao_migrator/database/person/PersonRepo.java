@@ -33,7 +33,7 @@ public class PersonRepo extends BaseRepo {
      * @param person Person Entity
      */
     public void savePerson(Person person) {
-        dao.insertOrReplace(person);
+        dao.insert(person);
     }
 
     /**
@@ -42,7 +42,7 @@ public class PersonRepo extends BaseRepo {
      * @param people List of Person Entity
      */
     public void savePeople(List<Person> people) {
-        dao.insertOrReplaceInTx(people);
+        dao.insertInTx(people);
     }
 
     /**

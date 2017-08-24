@@ -10,6 +10,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -28,16 +29,21 @@ android {
     }
 }
 
+/**
+ * Just increment the schemaVersion after changing the DB Schema
+ */
 greendao {
-    schemaVersion 17
+    schemaVersion 1
     daoPackage "${rootProject.ext.appId}.dao"
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation deps.appCompat
+    implementation deps.designSupport
     implementation deps.recyclerview
     implementation deps.greendao
     provided deps.javaAnnotation
     annotationProcessor project(':compiler')
+    compile 'com.facebook.stetho:stetho:1.5.0'
 }
