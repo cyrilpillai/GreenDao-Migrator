@@ -36,6 +36,7 @@ ext.deps = [
         recyclerview        : "com.android.support:recyclerview-v7:$supportLibraryVersion",
         designSupport       : "com.android.support:design:$supportLibraryVersion",
         greendao            : "org.greenrobot:greendao:3.2.2",
+        javapoet            : "com.squareup:javapoet:1.0.0"
 ]
 
 task clean(type: Delete) {

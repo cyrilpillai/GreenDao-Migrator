@@ -30,7 +30,7 @@ android {
 
 greendao {
     schemaVersion 17
-    daoPackage rootProject.ext.appId
+    daoPackage "${rootProject.ext.appId}.dao"
 }
 
 dependencies {
@@ -38,4 +38,6 @@ dependencies {
     implementation deps.appCompat
     implementation deps.recyclerview
     implementation deps.greendao
+    provided deps.javaAnnotation
+    annotationProcessor project(':compiler')
 }
