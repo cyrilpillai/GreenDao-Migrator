@@ -43,7 +43,7 @@ dependencies {
     implementation deps.designSupport
     implementation deps.recyclerview
     implementation deps.greendao
+    compile deps.stetho
     provided deps.javaAnnotation
     annotationProcessor project(':compiler')
-    compile 'com.facebook.stetho:stetho:1.5.0'
 }

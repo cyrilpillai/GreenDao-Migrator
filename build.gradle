@@ -31,12 +31,13 @@ ext {
 def supportLibraryVersion = '26.0.1'
 
 ext.deps = [
-        javaAnnotation      : "javax.annotation:javax.annotation-api:1.2",
-        appCompat           : "com.android.support:appcompat-v7:$supportLibraryVersion",
-        recyclerview        : "com.android.support:recyclerview-v7:$supportLibraryVersion",
-        designSupport       : "com.android.support:design:$supportLibraryVersion",
-        greendao            : "org.greenrobot:greendao:3.2.2",
-        javapoet            : "com.squareup:javapoet:1.0.0"
+        javaAnnotation: "javax.annotation:javax.annotation-api:1.2",
+        appCompat     : "com.android.support:appcompat-v7:$supportLibraryVersion",
+        recyclerview  : "com.android.support:recyclerview-v7:$supportLibraryVersion",
+        designSupport : "com.android.support:design:$supportLibraryVersion",
+        greendao      : "org.greenrobot:greendao:3.2.2",
+        javapoet      : "com.squareup:javapoet:1.0.0",
+        stetho        : "com.facebook.stetho:stetho:1.5.0"
 ]
 
 task clean(type: Delete) {

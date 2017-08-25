@@ -13,13 +13,13 @@
             style="@style/TextAppearance.AppCompat.Title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="John Doe" />
+            tools:text="@string/person_placeholder" />
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/tv_age"
             style="@style/TextAppearance.AppCompat.Subhead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="27" />
+            tools:text="@string/age_placeholder" />
     </LinearLayout>
 </layout>

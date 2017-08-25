@@ -1,23 +1,27 @@
-package com.cyrilpillai.greendao_migrator;
+package com.cyrilpillai.greendao_migrator.person_screen;
 
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
+import com.cyrilpillai.greendao_migrator.R;
 import com.cyrilpillai.greendao_migrator.database.person.Person;
 import com.cyrilpillai.greendao_migrator.databinding.PersonItemBinding;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.PersonViewHolder> {
 
     private List<Person> data;
+    private Context context;
 
-    public PersonAdapter() {
+    public PersonAdapter(Context context) {
         data = new ArrayList<>();
+        this.context = context;
     }
 
     public void setData(List<Person> data) {
@@ -29,7 +33,6 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.PersonView
         int position = getItemCount();
         data.add(position, person);
         notifyItemInserted(position);
-        Log.d("Debug", "addItem: "+data.toString());
     }
 
     @Override
@@ -49,7 +52,8 @@ public class PersonAdapter extends RecyclerView.Adapter<PersonAdapter.PersonView
     public void onBindViewHolder(PersonViewHolder holder, int position) {
         Person person = data.get(position);
         holder.binding.tvName.setText(person.getName());
-        holder.binding.tvAge.setText(String.valueOf(person.getAge()));
+        holder.binding.tvAge.setText(String.format(Locale.getDefault(),
+                context.getString(R.string.age_placeholder), person.getAge()));
     }
 
     class PersonViewHolder extends RecyclerView.ViewHolder {

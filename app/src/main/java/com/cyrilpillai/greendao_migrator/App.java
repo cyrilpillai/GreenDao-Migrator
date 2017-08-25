@@ -13,7 +13,9 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         context = this;
-        Stetho.initializeWithDefaults(this);
+        if (BuildConfig.DEBUG) {
+            Stetho.initializeWithDefaults(context);
+        }
     }
 
     public static Context getContext() {

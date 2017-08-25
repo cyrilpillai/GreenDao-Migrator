@@ -1,27 +1,30 @@
-package com.cyrilpillai.greendao_migrator;
+package com.cyrilpillai.greendao_migrator.person_screen;
 
-import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
+import com.cyrilpillai.greendao_migrator.R;
 import com.cyrilpillai.greendao_migrator.database.person.Person;
 import com.cyrilpillai.greendao_migrator.database.person.PersonRepo;
 import com.cyrilpillai.greendao_migrator.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.Locale;
+
+public class PersonActivity extends AppCompatActivity {
 
     private PersonAdapter personAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this,
+                R.layout.activity_person);
         binding.rvPeoples.setLayoutManager(new LinearLayoutManager(this));
         binding.rvPeoples.setHasFixedSize(true);
-        personAdapter = new PersonAdapter();
+        personAdapter = new PersonAdapter(this);
         binding.rvPeoples.setAdapter(personAdapter);
         getListOfPeople();
 
@@ -39,8 +42,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void addItem() {
         Person person = new Person();
-        person.setName("Person " + personAdapter.getItemCount());
-        person.setAge(personAdapter.getItemCount());
+        int currentCount = personAdapter.getItemCount();
+        person.setName(String.format(Locale.ENGLISH,
+                getString(R.string.person_placeholder), currentCount));
+        person.setAge(currentCount);
         PersonRepo.getInstance().savePerson(person);
         personAdapter.addItem(person);
     }

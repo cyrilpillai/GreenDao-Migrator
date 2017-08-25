@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GreenDAO Migrator</string>
+    <string name="person_placeholder">Person %d</string>
+    <string name="age_placeholder">Age %d</string>
 </resources>
