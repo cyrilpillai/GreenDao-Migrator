@@ -4,7 +4,7 @@ Database is a major part of any non-trivial Android application. Caching becomes
 
 Using an ORM like greenrobot's [GreenDAO](https://github.com/greenrobot/greenDAO) makes it super easy to persist data and saves us from the wrath of `Cursors`.
 
-But `Schema Migrations` are not straight forward in GreenDAO or most of the SQL ORMs for that matter.
+But `Schema Migrations` are not straight forward in GreenDAO or most of the ORMs for that matter.
 
 If you use GreenDAO in your application and hate the migration process, you can surely get something out of this project.
 
@@ -37,7 +37,7 @@ The generated class looks something like this
 public final class DaoHelper {
   /**
    * Returns a List of all the DAOs classes available */
-  public static java.util.List<Class<? extends AbstractDao<?, ?>>> getAllDaos() {
+  public static List<Class<? extends AbstractDao<?, ?>>> getAllDaos() {
   	List<Class<? extends AbstractDao<?, ?>>> daoClasses = ArrayList();
     daoClasses.add(ExampleDao.class);
     return daoClasses;
