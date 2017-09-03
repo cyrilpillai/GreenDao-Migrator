@@ -4,7 +4,7 @@ Database is a major part of any non-trivial Android application. Caching becomes
 
 Using an ORM like greenrobot's [GreenDAO](https://github.com/greenrobot/greenDAO) makes it super easy to persist data and saves us from the wrath of `Cursors`.
 
-But `Schema Migrations` is not straight forward in GreenDAO or most of the SQL ORMs for that matter.
+But `Schema Migrations` are not straight forward in GreenDAO or most of the SQL ORMs for that matter.
 
 If you use GreenDAO in your application and hate the migration process, you can surely get something out of this project.
 
@@ -17,7 +17,7 @@ greendao {
     schemaVersion 1
 }
 ```
-***
+
 ### How it works
 [This answer](https://stackoverflow.com/questions/13373170/greendao-schema-update-and-data-migration/30334668#30334668) on StackOverflow provides a utility class which creates temporary tables to persist the data present in current tables before dropping all the tables and recreating them based on the new schema and restores the previous data making the migration process seamless.
 
@@ -44,7 +44,6 @@ public final class DaoHelper {
   }
 }
 ```
-***
 
 #### BONUS
 GreenDAO generates the `DaoMaster.class` and `DaoSession.class` every time you build the project. The package where these files are generated is not defined and GreenDAO usually generates it in the same package as one of your classes annotated with `@Entity` (generally the one that the annotation processor picked up the last for processing).
