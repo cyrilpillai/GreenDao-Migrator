@@ -38,7 +38,7 @@ public final class DaoHelper {
   /**
    * Returns a List of all the DAOs classes available */
   public static List<Class<? extends AbstractDao<?, ?>>> getAllDaos() {
-  	List<Class<? extends AbstractDao<?, ?>>> daoClasses = ArrayList();
+  	List<Class<? extends AbstractDao<?, ?>>> daoClasses = new ArrayList();
     daoClasses.add(ExampleDao.class);
     return daoClasses;
   }
