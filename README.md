@@ -58,7 +58,7 @@ greendao {
 
 This enforces GreenDAO to generate the files in the specified package solving the above issue.
 
-**P.S:** I know GreenDAO is going to be deprecated in the future in favor of [ObjectBox](https://github.com/greenrobot/ObjectBox) but since it is still in `BETA`, I think there are people out there who are still using GreenDAO in production apps (like me) and would benefit from this project.
+**P.S:** I know GreenDAO is going to be deprecated in the future in favor of [ObjectBox](https://github.com/greenrobot/ObjectBox) but ~~since it is still in `BETA`,~~ I think there are people out there who are still using GreenDAO in production apps (like me) and would benefit from this project.
 
 ## License
 ```
