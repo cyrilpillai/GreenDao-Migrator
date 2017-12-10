@@ -8,7 +8,7 @@ But `Schema Migrations` are not straight forward in GreenDAO or most of the ORMs
 
 If you use GreenDAO in your application and hate the migration process, you can surely get something out of this project.
 
-This project eases the migration process and once all of the setup is completed the only think that we need to do is  change the DB schema version in the app level `build.gradle` and it just works.
+This project eases the migration process and once all of the setup is completed the only thing that we need to do is change the DB schema version in the app level `build.gradle` and it just works.
 ```java
 /**
  * Just increment the schemaVersion after changing the DB Schema
@@ -19,7 +19,7 @@ greendao {
 ```
 
 ### How it works
-[This answer](https://stackoverflow.com/questions/13373170/greendao-schema-update-and-data-migration/30334668#30334668) on StackOverflow provides a utility class which creates temporary tables to persist the data present in current tables before dropping all the tables and recreating them based on the new schema and restores the previous data making the migration process seamless.
+[This answer](https://stackoverflow.com/questions/13373170/greendao-schema-update-and-data-migration/30334668#30334668) on StackOverflow provides a utility class which creates temporary tables to persist the data present in current tables and then drops all the tables and recreates them based on the new schema and restores the previous data making the migration process seamless.
 
 The utility class accepts a database instance and a list of DAO classes.
 ```java
